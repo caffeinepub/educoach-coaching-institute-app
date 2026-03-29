@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    /* Dark premium edu theme — always dark */
+    --background: 0.115 0.028 243;
+    --foreground: 0.97 0.012 240;
+    --card: 0.145 0.032 243;
+    --card-foreground: 0.97 0.012 240;
+    --popover: 0.18 0.038 243;
+    --popover-foreground: 0.97 0.012 240;
+    --primary: 0.65 0.175 220;
+    --primary-foreground: 0.97 0.012 240;
+    --secondary: 0.175 0.033 243;
+    --secondary-foreground: 0.97 0.012 240;
+    --muted: 0.175 0.033 243;
+    --muted-foreground: 0.68 0.025 220;
+    --accent: 0.8 0.12 85;
+    --accent-foreground: 0.115 0.028 243;
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 0.97 0.012 240;
+    --border: 0.225 0.042 243;
+    --input: 0.225 0.042 243;
+    --ring: 0.65 0.175 220;
+    /* Chart */
+    --chart-1: 0.65 0.175 220;
+    --chart-2: 0.8 0.12 85;
+    --chart-3: 0.58 0.22 25;
+    --chart-4: 0.7 0.14 150;
+    --chart-5: 0.75 0.16 280;
+    /* Sidebar */
+    --sidebar: 0.13 0.03 243;
+    --sidebar-foreground: 0.97 0.012 240;
+    --sidebar-primary: 0.65 0.175 220;
+    --sidebar-primary-foreground: 0.97 0.012 240;
+    --sidebar-accent: 0.175 0.033 243;
+    --sidebar-accent-foreground: 0.97 0.012 240;
+    --sidebar-border: 0.225 0.042 243;
+    --sidebar-ring: 0.65 0.175 220;
+    /* Custom edu tokens */
+    --edu-nav: 0.12 0.03 245;
+    --edu-cyan: 0.65 0.175 220;
+    --edu-gold: 0.8 0.12 85;
+    --edu-red: 0.58 0.22 25;
+    --edu-track: 0.22 0.04 243;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Scrollbar hiding */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Progress bar animation */
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-value);
+  }
+}
+
+.progress-bar-animate {
+  animation: progress-fill 1s ease-out forwards;
+}
